@@ -21,45 +21,63 @@
         .tagline { font-size: 20px; color: #666; margin-bottom: 20px; }
         
         .section { margin-bottom: 60px; color: #000; }
-        h2 { font-size: 20px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; color: #000; }
+        h2 { font-size: 20px; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; color: #000; }
         
-        /* Společný styl pro všechny odkazy, aby byly černé a měly decentní linku */
-        .projects a, .contact-link, .address-link, .company-link {
+        /* Grid pro projekty - 2 sloupce */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .projects-grid a {
+            display: block;
+            color: #000 !important;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+            font-size: 24px; /* Větší font pro projekty */
+            font-weight: 500;
+        }
+        
+        .projects-grid a:hover { opacity: 0.6; border-bottom-color: #000; }
+
+        .contact-link, .address-link, .company-full-link {
             display: block;
             margin-bottom: 10px;
             color: #000 !important;
             text-decoration: none;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 6px;
             width: fit-content;
         }
-        
-        /* Úprava pro odkaz na název firmy v kontaktech */
-        .company-link {
-            display: inline; /* Aby nebyl na samostatném řádku jako blok */
-            border-bottom: 1px solid transparent;
-            padding-bottom: 0;
-            font-weight: bold;
-        }
-        .company-link:hover {
-            border-bottom: 1px solid #000;
-        }
 
-        .address-link {
+        /* Odkaz na rejstřík pro celý blok názvu a IČ */
+        .company-full-link {
             border-bottom: 1px solid transparent;
-            padding-bottom: 0;
-            line-height: 1.5;
+            line-height: 1.4;
+            margin-bottom: 20px;
         }
-        .address-link:hover {
-            border-bottom: 1px solid #ddd;
+        .company-full-link:hover {
             opacity: 0.7;
         }
 
-        .projects a:hover, .contact-link:hover { opacity: 0.6; }
+        .address-link {
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
         
+        .contact-link {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 4px;
+        }
+
         .footer { margin-top: 80px; font-size: 14px; color: #000; }
-        
-        .emoji { margin-right: 8px; }
+
+        /* Responzivita pro velmi malé telefony */
+        @media (max-width: 480px) {
+            h1 { font-size: 36px; }
+            .projects-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .projects-grid a { font-size: 20px; }
+        }
     </style>
 </head>
 <body>
@@ -67,14 +85,14 @@
     <h1><strong>GLOWiN s.r.o.</strong></h1>
     
     <div class="tagline">
-        💡 Illuminating ideas by turning concepts into managed realities.
+        Illuminating ideas by turning concepts into managed realities.
     </div>
     <div class="tagline" style="margin-bottom: 60px;"> 
-        ✨ Přinášíme jas vizím, kterým dáváme tvář, řád a funkční realitu.
+        Přinášíme jas vizím, kterým dáváme tvář, řád a funkční realitu.
     </div>
     
     <div class="section">
-        <h2><span class="emoji">🏢</span>O společnosti</h2>
+        <h2>O společnosti</h2>
         <p>
             <strong>GLOWiN s.r.o.</strong> je zastřešující společnost zaměřená na vývoj, podporu a vedení samostatných projektů. 
             Naším cílem je budovat inovativní značky a produkty s dlouhodobou hodnotou.
@@ -92,30 +110,33 @@
         </p>
     </div>
 
-    <div class="section projects">
-        <h2><span class="emoji">🚀</span>Projekty</h2>
-        <a href="https://babybilbo.eu" target="_blank">🍼 Baby Bilbo™️</a>
-        <a href="#" target="_blank">⏳ Připravovaný projekt 2</a>
-        <a href="#" target="_blank">⏳ Připravovaný projekt 3</a>
+    <div class="section">
+        <h2>Projekty</h2>
+        <div class="projects-grid">
+            <a href="https://babybilbo.eu" target="_blank">Baby Bilbo™️</a>
+            <a href="#" target="_blank">Projekt 2</a>
+            <a href="#" target="_blank">Projekt 3</a>
+            <a href="#" target="_blank">Projekt 4</a>
+        </div>
     </div>
 
     <div class="section">
-        <h2><span class="emoji">✉️</span>Kontaktní údaje</h2>
-        <p>
-            <a href="https://rejstrik-firem.kurzy.cz/24434353/glowin-sro/" target="_blank" class="company-link"><strong>GLOWiN s.r.o.</strong></a><br>
-            🆔 IČ: 24434353
-        </p>
+        <h2>Kontaktní údaje</h2>
         
-        <a href="https://www.google.com/maps/search/?api=1&query=Tusarova+1235/32+Praha+7" target="_blank" class="address-link">
-            📍 Tusarova 1235/32<br> 
-            &nbsp;&nbsp;&nbsp;&nbsp;Praha 7 170 00<br> 
-            &nbsp;&nbsp;&nbsp;&nbsp;Česká republika
+        <a href="https://rejstrik-firem.kurzy.cz/24434353/glowin-sro/" target="_blank" class="company-full-link">
+            <strong>GLOWiN s.r.o.</strong><br>
+            IČ: 24434353
+        </a>
+        
+        <a href="http://maps.google.com/?q=Tusarova+1235/32+Praha+7" target="_blank" class="address-link">
+            Tusarova 1235/32<br> 
+            Praha 7 170 00<br> 
+            Česká republika
         </a>
 
-        <br>
-        <a href="mailto:glowin@email.cz" class="contact-link">📧 glowin@email.cz</a>
-        <a href="tel:+420608527048" class="contact-link">📞 +420 608 527 048</a>
-        <a href="tel:+420736733783" class="contact-link">📞 +420 736 733 783</a>
+        <a href="mailto:glowin@email.cz" class="contact-link">glowin@email.cz</a>
+        <a href="tel:+420608527048" class="contact-link">+420 608 527 048</a>
+        <a href="tel:+420736733783" class="contact-link">+420 736 733 783</a>
     </div>
 
     <div class="footer">
