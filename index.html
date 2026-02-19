@@ -13,19 +13,23 @@
             margin-left: auto;
             margin-right: auto;
             line-height: 1.7;
-            color: #111;
+            /* Nastavení základní barvy na černou */
+            color: #000;
             background: #ffffff;
         }
-        h1 { font-size: 48px; margin-bottom: 10px; }
-        .tagline { font-size: 20px; color: #666; margin-bottom: 60px; }
-        .section { margin-bottom: 60px; }
-        h2 { font-size: 20px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+        h1 { font-size: 48px; margin-bottom: 10px; color: #000; }
         
-        /* Styl pro projekty a odkazy */
+        /* Jediná povolená šedá barva pro motto */
+        .tagline { font-size: 20px; color: #666; margin-bottom: 20px; }
+        
+        .section { margin-bottom: 60px; color: #000; }
+        h2 { font-size: 20px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; color: #000; }
+        
+        /* Styl pro projekty a odkazy - vynucená černá */
         .projects a, .contact-link {
             display: block;
             margin-bottom: 10px;
-            color: #000;
+            color: #000 !important;
             text-decoration: none;
             border-bottom: 1px solid #ddd;
             padding-bottom: 6px;
@@ -33,32 +37,38 @@
         }
         .projects a:hover, .contact-link:hover { opacity: 0.6; }
         
-        .footer { margin-top: 80px; font-size: 14px; color: #777; }
+        /* Patička nyní také černou barvou */
+        .footer { margin-top: 80px; font-size: 14px; color: #000; }
     </style>
 </head>
 <body>
 
-    <h1>GLOWiN s.r.o.</h1>
+    <h1><strong>GLOWiN s.r.o.</strong></h1>
+    
     <div class="tagline">
         Illuminating ideas by turning concepts into managed realities.
-    <div class="tagline"> 
+    </div>
+    <div class="tagline" style="margin-bottom: 60px;"> 
         Přinášíme jas vizím, kterým dáváme tvář, řád a funkční realitu.
     </div>
     
     <div class="section">
         <h2>O společnosti</h2>
         <p>
-            GLOWiN s.r.o. je zastřešující společnost zaměřená na vývoj, podporu a vedení samostatných projektů. 
-            Naším cílem je budovat inovativníá značky a produkty s dlouhodobou hodnotou.
+            <strong>GLOWiN s.r.o.</strong> je zastřešující společnost zaměřená na vývoj, podporu a vedení samostatných projektů. 
+            Naším cílem je budovat inovativní značky a produkty s dlouhodobou hodnotou.
         </p>
+        <p>
             Věříme, že skutečná hodnota nápadu se nepozná podle toho, jak jasně září na papíře, ale podle toho, 
             jak funguje v reálném světě. 
             Naše práce proto nekončí u kreativního konceptu. 
             Jsme architekti i operátoři vlastních vizí – nápady sami navrhujeme, stavíme a následně je s pevnou rukou řídíme.
         </p>
+        <p>
             Tento komplexní přístup nám dává unikátní nadhled. Každý projekt vnímáme jako živý organismus, 
             který vyžaduje péči od prvního záblesku inspirace až po každodenní provozní detaily. 
             Stejnou preciznost a strategické vedení přinášíme i partnerům, pro které tvoříme značky a projekty s jasným cílem: proměnit odvážné vize v udržitelnou a fungující realitu.
+        </p>
     </div>
 
     <div class="section projects">
@@ -73,18 +83,18 @@
         <p>
             <strong>GLOWiN s.r.o.</strong><br>
             IČ: 24434353<br>
-            Sídlo: Tusarova 1235/32 
-                   Praha 7 
-                   170 00 
-                   Česká republika<br>
+            Sídlo: Tusarova 1235/32<br> 
+            Praha 7<br> 
+            170 00<br> 
+            Česká republika
         </p>
         <a href="mailto:glowin@email.cz" class="contact-link">glowin@email.cz</a>
         <a href="tel:+420608527048" class="contact-link">+420 608 527 048</a>
-        <a href="tel:+420608527048" class="contact-link">+420 736 733 783</a>
+        <a href="tel:+420736733783" class="contact-link">+420 736 733 783</a>
     </div>
 
     <div class="footer">
-        © 2026 GLOWiN s.r.o.
+        © 2026 <strong>GLOWiN s.r.o.</strong>
     </div>
 
 </body>
